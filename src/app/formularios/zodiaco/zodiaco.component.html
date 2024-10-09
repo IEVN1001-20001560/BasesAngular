@@ -1,0 +1,45 @@
+<div class="contenedor">
+    <div class="formulario-contenedor">
+      <h1>Hola humano, aqui puedes descubrir tu signo del zodiaco chino owo</h1>
+      <form [formGroup]="formulario">
+        <div>
+          <label>ingrese su nombre:</label>
+          <input formControlName="nombre" type="text">
+        </div>
+        <div>
+          <label>ingrese su apellido paterno:</label>
+          <input formControlName="apellidoPaterno" type="text" >
+        </div>
+        <div>
+          <label>ingrese apellido Materno:</label>
+          <input formControlName="apellidoMaterno" type="text" >
+        </div>
+        <div>
+          <label>ingrese su dia de nacimiento:</label>
+          <input formControlName="dia" type="number">
+        </div>
+        <div>
+          <label>ingrese su mes de nacimiento:</label>
+          <input formControlName="mes" type="number" >
+        </div>
+        <div>
+          <label>ingrese su año de nacimiento:</label>
+          <input formControlName="anio" type="number" >
+        </div>
+        <div>
+          <label>sexo:</label>
+          <label><input formControlName="sexo" type="radio" value="M"> Masculino</label>
+          <label><input formControlName="sexo" type="radio" value="F"> Femenino</label>
+        </div>
+        <button type="button" (click)="calcularEdadYSigno()">Calcular</button>
+      </form>
+    </div>
+    
+    <div class="resultados-contenedor">
+      <h3>Hola: {{nombreCompleto}}</h3>
+      <h3>Tu edad es: {{resultadoEdad}} años</h3>
+      <h3>Y tu Signo del Zodiaco Chino es: {{signoZodiacoChino}}</h3>
+      <img *ngIf="imagenSigno" [src]="imagenSigno" alt="{{signoZodiacoChino}}">
+    </div>
+  </div>
+  
